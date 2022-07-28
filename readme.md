@@ -1,4 +1,4 @@
-# 🎨 React Native FontAwesome 6
+# 🎨 React Native Font Awesome 6 Icons
 
 ```ts
 import { WormSolid } from '@404-software/fontawesome'
