@@ -24,8 +24,7 @@ const getIconSvg = async (
   )
 }
 
-const srcDirectory = (pack: 'solid' | 'brands' | 'regular') =>
-  path.resolve(__dirname, `../src/${pack}`)
+const srcDirectory = path.resolve(__dirname, '../src/')
 
 const run = async (pack: 'solid' | 'brands' | 'regular') => {
   await Promise.all(
@@ -41,17 +40,19 @@ const run = async (pack: 'solid' | 'brands' | 'regular') => {
           ref: false,
           expandProps: 'end',
           typescript: true,
-          svgProps: {},
+          svgProps: {
+            fill: 'currentColor',
+          },
         },
         {
-          componentName,
+          componentName: `${componentName}${capitalizeFirstLetter(pack)}`,
         }
       )
 
       const outDirectory = srcDirectory
       const outPath = path.resolve(
-        outDirectory(pack),
-        filename.replace('svg', 'tsx')
+        outDirectory,
+        filename.replace('.svg', `-${pack}.tsx`)
       )
 
       await new Promise((resolve) => {
@@ -60,27 +61,40 @@ const run = async (pack: 'solid' | 'brands' | 'regular') => {
     })
   )
 
-  const generateIndexFile = (pack: 'solid' | 'brands' | 'regular') => {
+  const generateIndexFile = () => {
+    const packs = ['solid', 'brands', 'regular']
     const contents: string[] = []
     const types: string[] = []
 
-    iconFileNames[pack].forEach((filename, index) => {
-      contents.push(`export { default as ${getComponentName(filename)} } from './${
-        filename.split('.')[0]
-      }'`)
-      
-      types.push(`${index === 0 ? '' : ' |'}'${getComponentName(filename)}'`)
-    })
+    packs.forEach((pack, packIndex) =>
+      iconFileNames[pack].forEach((filename, index) => {
+        contents.push(
+          `export { default as ${getComponentName(
+            filename
+          )}${capitalizeFirstLetter(pack)} } from './src/${
+            filename.split('.')[0]
+          }-${pack}'`
+        )
+
+        types.push(
+          `${index === 0 && packIndex === 0 ? '' : ' |'}'${getComponentName(
+            filename
+          )}${capitalizeFirstLetter(pack)}'`
+        )
+      })
+    )
 
     fs.writeFileSync(
-      path.resolve(srcDirectory(pack), 'index.ts'),
-      heading + '\n' + contents.join('\n') + `\n\nexport type FontAwesome${capitalizeFirstLetter(pack)}Icons = ` + types.join('\n')
+      path.resolve('./', 'index.ts'),
+      heading +
+        '\n' +
+        contents.join('\n') +
+        `\n\nexport type FontAwesomeIcons = ` +
+        types.join('\n')
     )
   }
 
-  generateIndexFile('solid')
-  generateIndexFile('brands')
-  generateIndexFile('regular')
+  generateIndexFile()
 }
 
 const capitalizeFirstLetter = (str: string) =>

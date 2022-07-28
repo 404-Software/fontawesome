@@ -1,6 +1,6 @@
 {
   "name": "@404-software/fontawesome",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "devDependencies": {
     "@svgr/core": "^6.2.1",
     "@types/node": "^18.0.4",
@@ -9,16 +9,16 @@
     "typescript": "^4.7.4"
   },
   "main": "lib/commonjs/index.js",
-  "react-native": "src/index.tsx",
+  "react-native": "/index.ts",
   "module": "lib/module/index.js",
-  "types": "lib/typescript/src/index.d.ts",
+  "types": "lib/typescript/index.d.ts",
   "scripts": {
     "prepare": "yarn generate bob build",
-    "generate": "npx ts-node ./generate/index.ts",
-    "postinstall": "yarn prepare && yarn generate"
+    "generate": "npx ts-node ./generate/index.ts"
   },
   "files": [
     "src",
+    "index.ts",
     "lib",
     "!**/__tests__",
     "!**/__fixtures__",
