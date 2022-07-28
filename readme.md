@@ -6,6 +6,10 @@ import { WormSolid } from '@404-software/fontawesome'
 export const Icon = () => <WormSolid />
 ```
 
+## Credits
+
+This package is a fork of [`react-native-iconic` by Fernando Rojo](https://github.com/nandorojo/react-native-iconic).
+
 ## Overview
 
 - 😎 Free, beautiful icons
