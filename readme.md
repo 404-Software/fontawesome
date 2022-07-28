@@ -1,9 +1,9 @@
 # 🎨 React Native FontAwesome 6
 
 ```ts
-import { Worm } from '@404-software/fontawesome/solid'
+import { WormSolid } from '@404-software/fontawesome'
 
-export const Icon = () => <Worm />
+export const Icon = () => <WormSolid />
 ```
 
 ## Overview
@@ -24,18 +24,18 @@ yarn add @404-software/fontawesome react-native-svg
 
 Each icon is exported as its own component with an adjusted name.
 
-For example, to use the `angle-down` icon, import `AngleDown`:
+For example, to use the `angle-down` solid variant icon, import `AngleDownSolid`:
 
 ```tsx
-import { AngleDown } from '@404-software/fontawesome/solid'
+import { AngleDownSolid } from '@404-software/fontawesome'
 ```
 
 You can also `import * as FontAwesome`:
 
 ```tsx
-import * as FontAwesome from '@404-software/fontawesome/solid'
+import * as FontAwesome from '@404-software/fontawesome'
 
-export const Icon = () => <FontAwesome.AngleDown />
+export const Icon = () => <FontAwesome.AngleDownSolid />
 ```
 
 For a full directory of components, see the [FontAwesome](https://fontawesome.com/icons) website.
@@ -43,13 +43,13 @@ For a full directory of components, see the [FontAwesome](https://fontawesome.co
 ### Custom color
 
 ```tsx
-<ArrowUp color="black" />
+<AngleDownSolid color="black" />
 ```
 
 ### Custom size
 
 ```tsx
-<ArrowUp height={30} width={30} />
+<AngleDownSolid height={30} width={30} />
 ```
 
 ## Props

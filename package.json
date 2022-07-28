@@ -1,6 +1,6 @@
 {
   "name": "@404-software/fontawesome",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "devDependencies": {
     "@svgr/core": "^6.2.1",
     "@types/node": "^18.0.4",
