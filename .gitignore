@@ -1,0 +1,5 @@
+node_modules
+lib
+generate/fontawesome/brands
+generate/fontawesome/regular
+generate/fontawesome/solid
