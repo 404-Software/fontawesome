@@ -1,8 +1,8 @@
 {
   "name": "@404-software/fontawesome",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "devDependencies": {
-    "@svgr/core": "^6.2.1",
+    "@svgr/core": "^6.5.1",
     "@types/node": "^18.0.4",
     "@types/react": "^17.0.2",
     "react-native-builder-bob": "^0.18.3",
@@ -38,7 +38,7 @@
     "lib/"
   ],
   "dependencies": {
-    "react-native-svg": "^12.3.0"
+    "react-native-svg": "13.4.0"
   },
   "prettier": {
     "singleQuote": true,

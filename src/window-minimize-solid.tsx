@@ -2,7 +2,5 @@
 // https://404-software.com
 import * as React from "react";
 import Svg, { SvgProps, Path } from "react-native-svg";
-
 const WindowMinimizeSolid = (props: SvgProps) => <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" {...props}><Path d="M0 448C0 430.3 14.33 416 32 416H480C497.7 416 512 430.3 512 448C512 465.7 497.7 480 480 480H32C14.33 480 0 465.7 0 448z" /></Svg>;
-
 export default WindowMinimizeSolid;

@@ -2,7 +2,5 @@
 // https://404-software.com
 import * as React from "react";
 import Svg, { SvgProps, Path } from "react-native-svg";
-
 const SquareFullRegular = (props: SvgProps) => <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" {...props}><Path d="M512 0V512H0V0H512zM464 48H48V464H464V48z" /></Svg>;
-
 export default SquareFullRegular;
