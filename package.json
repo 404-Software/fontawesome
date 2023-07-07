@@ -1,11 +1,12 @@
 {
   "name": "@404-software/fontawesome",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "devDependencies": {
     "@svgr/core": "^6.5.1",
     "@types/node": "^18.0.4",
     "@types/react": "^17.0.2",
     "react-native-builder-bob": "^0.18.3",
+    "tsx": "^3.12.7",
     "typescript": "^4.7.4"
   },
   "main": "lib/commonjs/index.js",
@@ -14,7 +15,7 @@
   "types": "lib/typescript/index.d.ts",
   "scripts": {
     "prepare": "yarn generate bob build",
-    "generate": "npx ts-node ./generate/index.ts"
+    "generate": "tsx ./generate/index.ts"
   },
   "files": [
     "src",
@@ -38,7 +39,7 @@
     "lib/"
   ],
   "dependencies": {
-    "react-native-svg": "13.4.0"
+    "react-native-svg": "13.9.0"
   },
   "prettier": {
     "singleQuote": true,
